@@ -74,7 +74,7 @@ export default function InvoiceList() {
   useEffect(() => {
     const fetchInvoices = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/invoices");
+        const res = await axios.get("https://softwareb.onrender.com/api/invoices");
         const data = Array.isArray(res.data) ? res.data : res.data?.data || [];
         setInvoices(data);
       } catch (err) {

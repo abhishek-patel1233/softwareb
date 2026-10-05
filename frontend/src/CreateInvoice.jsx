@@ -33,8 +33,8 @@ export default function CreateInvoice() {
     const fetchData = async () => {
       try {
         const [partyRes, itemRes] = await Promise.all([
-          axios.get("http://localhost:5000/api/parties"),
-          axios.get("http://localhost:5000/api/items"),
+          axios.get("https://softwareb.onrender.com/api/parties"),
+          axios.get("https://softwareb.onrender.com/api/items"),
         ]);
 
         const partyData = Array.isArray(partyRes.data)
@@ -172,7 +172,7 @@ export default function CreateInvoice() {
     };
 
     try {
-      await axios.post("http://localhost:5000/api/invoices", payload);
+      await axios.post("https://softwareb.onrender.com/api/invoices", payload);
       alert("Invoice Created Successfully!");
       navigate("/invoices");
     } catch (err) {

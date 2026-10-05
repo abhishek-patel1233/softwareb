@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export const API = "http://localhost:5000/api";
+export const API = "https://softwareb.onrender.com/api";
 export const money = (v) => `₹${Number(v || 0).toLocaleString("en-IN", { maximumFractionDigits: 2 })}`;
 export const num = (v) => Number(v || 0).toLocaleString("en-IN", { maximumFractionDigits: 2 });
 export const fmtDate = (d) => (d ? new Date(d).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric", timeZone: "UTC" }) : "-");

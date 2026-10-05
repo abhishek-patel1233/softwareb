@@ -21,7 +21,7 @@ function Expenses() {
   // Fetch expenses from API
   const fetchExpenses = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/expenses");
+      const res = await axios.get("https://softwareb.onrender.com/api/expenses");
       const data = Array.isArray(res.data) ? res.data : res.data?.data || [];
       setExpenses(data);
     } catch (err) {
@@ -40,7 +40,7 @@ function Expenses() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/expenses", formData);
+      await axios.post("https://softwareb.onrender.com/api/expenses", formData);
       alert("Expense Recorded Successfully!");
       setFormData({
         title: "",

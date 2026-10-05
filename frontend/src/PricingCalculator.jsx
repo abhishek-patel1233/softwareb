@@ -21,7 +21,7 @@ function DynamicPricingCalculator() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/pricing-config")
+      .get("https://softwareb.onrender.com/api/pricing-config")
       .then((res) => {
         if (res.data) setRates(res.data);
       })
@@ -65,7 +65,7 @@ function DynamicPricingCalculator() {
         grandTotal,
       };
 
-      await axios.post("http://localhost:5000/api/quotations", payload);
+      await axios.post("https://softwareb.onrender.com/api/quotations", payload);
       alert(
         `Quotation Saved! Grand Total: ₹${grandTotal.toLocaleString("en-IN")}`
       );

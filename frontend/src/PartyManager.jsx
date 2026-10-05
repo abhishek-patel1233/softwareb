@@ -18,7 +18,7 @@ function PartyManager() {
 
   const fetchParties = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/parties");
+      const res = await axios.get("https://softwareb.onrender.com/api/parties");
       const data = Array.isArray(res.data) ? res.data : res.data?.data || [];
       setParties(data);
     } catch (err) {
@@ -47,7 +47,7 @@ function PartyManager() {
         type: formData.partyType || formData.type,
       };
 
-      await axios.post("http://localhost:5000/api/parties", payload);
+      await axios.post("https://softwareb.onrender.com/api/parties", payload);
       alert("Party Added Successfully!");
       setFormData({
         name: "",

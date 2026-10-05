@@ -14,7 +14,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", formData);
+      const res = await axios.post("https://softwareb.onrender.com/api/auth/login", formData);
       localStorage.setItem("userInfo", JSON.stringify(res.data));
       setMessage("Login Successful!");
       setTimeout(() => navigate("/dashboard"), 1000);
